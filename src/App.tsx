@@ -10,7 +10,7 @@ const App = () => {
 
     return ( <>
         <div>Ataccama Task</div>
-        <MyTable rows={data[0].kids.has_relatives.records}/>
+        <MyTable rows={data}/>
         </>
     );
 }

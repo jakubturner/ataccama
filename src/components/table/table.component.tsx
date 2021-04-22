@@ -10,7 +10,7 @@ import Paper from '@material-ui/core/Paper';
 
 
 interface Props {
-    rows: Array<{data:any}>
+    rows?: Array<{data:any}>
 }
 
 /// napsat fc ktera vytahne keys z dat
@@ -19,6 +19,10 @@ interface Props {
 const getKeys = (data: any) => {
    return Object.keys(data[0].data)
 }
+
+// const getKids = (data: any) => {
+//     return
+// }
 
 
 const  MyTable = (props: Props) =>{
@@ -30,15 +34,15 @@ const  MyTable = (props: Props) =>{
             <Table >
                 <TableHead>
                     <TableRow>
-                        {getKeys(props).map(col => (
+                        {getKeys(props.rows).map(col => (
                             <TableCell>{col}</TableCell>
                         ))}
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {props.rows.map(row => (
+                    {props.rows?.map(row => (
                         <TableRow>
-                            {getKeys(props).map(col => (
+                            {getKeys(props.rows).map(col => (
                                 <TableCell>{row.data[col]}</TableCell>
                             ))}
                         </TableRow>
