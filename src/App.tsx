@@ -1,10 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
+import MyTable from './components/table/table.component'
+import data from './data/data.json'
 
+type mainData = {}
 
-function App() {
-  return (
-    <div>Ataccama Task</div>
-  );
+const App = () => {
+
+    const [mainData, setMainData] = useState<mainData[]>(data) //Data Loading from Json and saving into state
+
+    return ( <>
+        <div>Ataccama Task</div>
+        <MyTable rows={data[0].kids.has_relatives.records}/>
+        </>
+    );
 }
 
 export default App;
