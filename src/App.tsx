@@ -5,17 +5,17 @@ import HeaderTable from './components/colaps-table/collaps-table.components'
 
 import data from './data/data.json'
 
-type mainData = {}
+// TODO: udelat separe fc removeRow
+// TODO: napsat funkci ktera smaze cely radek
 
 const App = () => {
 
-    const [mainData, setMainData] = useState<mainData[]>(data) //Data Loading from Json and saving into state
+    //TODO: rozchodit state a poslat do collTable
+
+    const [mainData, setMainData] = useState(data) //Data Loading from Json and saving into state
 
     return (<>
-            <div>Ataccama Task</div>
-            {/*<MyTable rows={data}/>*/}
-            {/*    <HeaderTable rows={data}/>*/}
-            <CollapsibleTable rows={data}/>
+            <CollapsibleTable rows={mainData}/>
         </>
     );
 }
